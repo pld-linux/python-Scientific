@@ -13,7 +13,7 @@ Summary:	Various Python modules for scientific computing
 Summary(pl):	Ró¿ne modu³y Pythona dla obliczeñ naukowych
 Name:		python-%{pname}
 Version:	2.2
-Release:	2
+Release:	3
 Group:		Libraries/Python
 License:	LGPL
 Source0:	http://starship.python.net/crew/hinsen/%{mname}-%{version}.tar.gz
@@ -21,7 +21,7 @@ Source0:	http://starship.python.net/crew/hinsen/%{mname}-%{version}.tar.gz
 URL:		http://starship.python.net/crew/hinsen/scientific.html
 BuildRequires:	netcdf-devel
 BuildRequires:	python-numpy-devel
-BuildRequires:	tkinter
+BuildRequires:	python-tkinter
 Requires:	python-numpy
 Requires:	tkinter
 %pyrequires_eq	python-modules

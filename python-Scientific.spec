@@ -24,7 +24,7 @@ BuildRequires:	python-numpy-devel
 BuildRequires:	tkinter
 Requires:	python-numpy
 Requires:	tkinter
-%requires_eq	python-modules
+%pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

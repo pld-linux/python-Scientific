@@ -14,7 +14,7 @@ Summary:	Various Python modules for scientific computing
 Summary(pl):	Ró¿ne modu³y Pythona dla obliczeñ naukowych
 Name:		python-%{pname}
 Version:	2.2
-Release:	1.1
+Release:	2
 Group:		Libraries/Python
 License:	LGPL
 Source0:	http://starship.python.net/crew/hinsen/%{mname}-%{version}.tar.gz
@@ -45,14 +45,12 @@ python setup.py build
 rm -rf $RPM_BUILD_ROOT
 python setup.py install --root=$RPM_BUILD_ROOT --optimize=2
 
-gzip -9nf README README.MPI
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz Doc/HTML Doc/PDF
+%doc README README.MPI Doc/HTML Doc/PDF
 %dir %{py_sitedir}/%{pname}
 %{py_sitedir}/%{pname}/Functions/*.py[co]
 %{py_sitedir}/%{pname}/Geometry/*.py[co]

@@ -3,7 +3,6 @@
 # 1. tkwidgets to separate package
 #
 
-%include	/usr/lib/rpm/macros.python
 
 %define 	pname	Scientific
 %define		mname	%{pname}Python

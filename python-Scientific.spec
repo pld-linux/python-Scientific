@@ -1,3 +1,10 @@
+
+#
+# todo:
+# 1. tkwidgets to separate package
+# 2. missing directories
+#
+
 %include	/usr/lib/rpm/macros.python
 
 %define 	pname	Scientific
@@ -7,17 +14,17 @@ Summary:	Various Python modules for scientific computing
 Summary(pl):	Ró¿ne modu³y Pythona dla obliczeñ naukowych
 Name:		python-%{pname}
 Version:	2.2
-Release:	1
+Release:	1.1
 Group:		Libraries/Python
 License:	LGPL
 Source0:	http://starship.python.net/crew/hinsen/%{mname}-%{version}.tar.gz
 Url:		http://starship.python.net/crew/hinsen/scientific.html
 BuildRequires:	netcdf-devel
-BuildRequires:	python-numpy
+BuildRequires:	python-numpy-devel
 BuildRequires:	tkinter
 Requires:	python-numpy
 Requires:	tkinter
-%requires_eq	python
+%requires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,11 +43,7 @@ python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install \
-	--root=$RPM_BUILD_ROOT
-
-%{py_ocomp} $RPM_BUILD_ROOT%{py_sitedir}
-%{py_comp} $RPM_BUILD_ROOT%{py_sitedir}
+python setup.py install --root=$RPM_BUILD_ROOT --optimize=2
 
 gzip -9nf README README.MPI
 

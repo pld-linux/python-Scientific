@@ -1,6 +1,5 @@
-
 #
-# todo:
+# TODO:
 # 1. tkwidgets to separate package
 # 2. missing directories
 #
@@ -19,7 +18,7 @@ Group:		Libraries/Python
 License:	LGPL
 Source0:	http://starship.python.net/crew/hinsen/%{mname}-%{version}.tar.gz
 # Source0-md5:	c5c5ecfe6d6973d5c8d465ccf192b266
-Url:		http://starship.python.net/crew/hinsen/scientific.html
+URL:		http://starship.python.net/crew/hinsen/scientific.html
 BuildRequires:	netcdf-devel
 BuildRequires:	python-numpy-devel
 BuildRequires:	tkinter
@@ -35,7 +34,7 @@ Various Python modules for scientific computing.
 Ró¿ne modu³y Pythona dla obliczeñ naukowych.
 
 %prep
-%setup -q -n %{mname}-%{version}
+%setup -q
 
 %build
 CC=%{__cc}; export CC

@@ -18,6 +18,7 @@ Release:	2
 Group:		Libraries/Python
 License:	LGPL
 Source0:	http://starship.python.net/crew/hinsen/%{mname}-%{version}.tar.gz
+# Source0-md5:	c5c5ecfe6d6973d5c8d465ccf192b266
 Url:		http://starship.python.net/crew/hinsen/scientific.html
 BuildRequires:	netcdf-devel
 BuildRequires:	python-numpy-devel

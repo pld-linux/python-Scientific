@@ -12,7 +12,7 @@ Summary:	Various Python modules for scientific computing
 Summary(pl):	Ró¿ne modu³y Pythona dla obliczeñ naukowych
 Name:		python-%{pname}
 Version:	2.2
-Release:	3
+Release:	4
 Group:		Libraries/Python
 License:	LGPL
 Source0:	http://starship.python.net/crew/hinsen/%{mname}-%{version}.tar.gz

@@ -1,7 +1,6 @@
 #
 # TODO:
 # 1. tkwidgets to separate package
-# 2. missing directories
 #
 
 %include	/usr/lib/rpm/macros.python
@@ -23,7 +22,7 @@ BuildRequires:	netcdf-devel
 BuildRequires:	python-numpy-devel
 BuildRequires:	python-tkinter
 Requires:	python-numpy
-Requires:	tkinter
+Requires:	python-tkinter
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +33,7 @@ Various Python modules for scientific computing.
 Ró¿ne modu³y Pythona dla obliczeñ naukowych.
 
 %prep
-%setup -q
+%setup -q -n %{mname}-%{version}
 
 %build
 CC=%{__cc}; export CC
@@ -52,6 +51,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README README.MPI Doc/HTML Doc/PDF
 %dir %{py_sitedir}/%{pname}
+%dir %{py_sitedir}/%{pname}/Functions
+%dir %{py_sitedir}/%{pname}/Geometry
+%dir %{py_sitedir}/%{pname}/IO
+%dir %{py_sitedir}/%{pname}/MPI
+%dir %{py_sitedir}/%{pname}/Physics
+%dir %{py_sitedir}/%{pname}/Statistics
+%dir %{py_sitedir}/%{pname}/Threading
+%dir %{py_sitedir}/%{pname}/TkWidgets
+%dir %{py_sitedir}/%{pname}/Visualization
 %{py_sitedir}/%{pname}/Functions/*.py[co]
 %{py_sitedir}/%{pname}/Geometry/*.py[co]
 %{py_sitedir}/%{pname}/IO/*.py[co]

@@ -10,12 +10,12 @@
 Summary:	Various Python modules for scientific computing
 Summary(pl):	Ró¿ne modu³y Pythona dla obliczeñ naukowych
 Name:		python-%{pname}
-Version:	2.2
-Release:	5
+Version:	2.4.9
+Release:	1
 Group:		Libraries/Python
 License:	LGPL
-Source0:	http://starship.python.net/crew/hinsen/%{mname}-%{version}.tar.gz
-# Source0-md5:	c5c5ecfe6d6973d5c8d465ccf192b266
+Source0:	http://starship.python.net/~hinsen/ScientificPython/%{mname}-%{version}.tar.gz
+# Source0-md5:	a88602846bdb8a1e2c9f21dc3cf81341
 URL:		http://starship.python.net/crew/hinsen/scientific.html
 BuildRequires:	netcdf-devel
 BuildRequires:	python-numpy-devel
@@ -37,11 +37,14 @@ Ró¿ne modu³y Pythona dla obliczeñ naukowych.
 %build
 CC=%{__cc}; export CC
 CFLAGS="%{rpmcflags}"; export CFLAGS
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT --optimize=2
+%{__python} setup.py install --root=$RPM_BUILD_ROOT --optimize=2
+
+#Removing *.py files
+find $RPM_BUILD_ROOT%{_libdir} -type f -name "*.py"|xargs rm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,25 +53,19 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README README.MPI Doc/HTML Doc/PDF
 %dir %{py_sitedir}/%{pname}
-%dir %{py_sitedir}/%{pname}/Functions
-%dir %{py_sitedir}/%{pname}/Geometry
-%dir %{py_sitedir}/%{pname}/IO
-%dir %{py_sitedir}/%{pname}/MPI
-%dir %{py_sitedir}/%{pname}/Physics
-%dir %{py_sitedir}/%{pname}/Statistics
-%dir %{py_sitedir}/%{pname}/Threading
-%dir %{py_sitedir}/%{pname}/TkWidgets
-%dir %{py_sitedir}/%{pname}/Visualization
-%{py_sitedir}/%{pname}/Functions/*.py[co]
-%{py_sitedir}/%{pname}/Geometry/*.py[co]
-%{py_sitedir}/%{pname}/IO/*.py[co]
-%{py_sitedir}/%{pname}/MPI/*.py[co]
-%{py_sitedir}/%{pname}/Physics/*.py[co]
-%{py_sitedir}/%{pname}/Statistics/*.py[co]
-%{py_sitedir}/%{pname}/Threading/*.py[co]
-%{py_sitedir}/%{pname}/TkWidgets/*.py[co]
-%{py_sitedir}/%{pname}/Visualization/*.py[co]
+%attr(755,root,root) %{_bindir}/*
+%{py_sitedir}/%{pname}/*.py[co]
+%{py_sitedir}/%{pname}/BSP
+%{py_sitedir}/%{pname}/Functions
+%{py_sitedir}/%{pname}/Geometry
+%{py_sitedir}/%{pname}/IO
+%{py_sitedir}/%{pname}/MPI
+%{py_sitedir}/%{pname}/Physics
+%{py_sitedir}/%{pname}/Signals
+%{py_sitedir}/%{pname}/Statistics
+%{py_sitedir}/%{pname}/Threading
+%{py_sitedir}/%{pname}/TkWidgets
+%{py_sitedir}/%{pname}/Visualization
 %dir %{py_sitedir}/%{pname}/linux2
 %attr(755,root,root) %{py_sitedir}/%{pname}/linux2/Scientific_netcdf.so
-%{py_sitedir}/%{pname}/*.py[co]
 %{py_incdir}/%{pname}

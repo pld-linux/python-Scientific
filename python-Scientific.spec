@@ -35,7 +35,7 @@ Ró¿ne modu³y Pythona dla obliczeñ naukowych.
 %setup -q -n %{mname}-%{version}
 
 %build
-CC=%{__cc}; export CC
+CC="%{__cc}"; export CC
 CFLAGS="%{rpmcflags}"; export CFLAGS
 %{__python} setup.py build
 

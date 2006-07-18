@@ -18,9 +18,9 @@ Source0:	http://starship.python.net/~hinsen/ScientificPython/%{mname}-%{version}
 # Source0-md5:	a88602846bdb8a1e2c9f21dc3cf81341
 URL:		http://starship.python.net/crew/hinsen/scientific.html
 BuildRequires:	netcdf-devel
-BuildRequires:	python-numpy-devel
+BuildRequires:	python-Numeric-devel
 BuildRequires:	python-tkinter
-Requires:	python-numpy
+Requires:	python-Numeric
 Requires:	python-tkinter
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -52,8 +52,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README README.MPI Doc/HTML Doc/PDF
-%dir %{py_sitedir}/%{pname}
 %attr(755,root,root) %{_bindir}/*
+%dir %{py_sitedir}/%{pname}
 %{py_sitedir}/%{pname}/*.py[co]
 %{py_sitedir}/%{pname}/BSP
 %{py_sitedir}/%{pname}/Functions

@@ -8,7 +8,7 @@
 %define		mname	%{pname}Python
 
 Summary:	Various Python modules for scientific computing
-Summary(pl):	Ró¿ne modu³y Pythona dla obliczeñ naukowych
+Summary(pl.UTF-8):   RÃ³Å¼ne moduÅ‚y Pythona dla obliczeÅ„ naukowych
 Name:		python-%{pname}
 Version:	2.4.9
 Release:	1
@@ -28,8 +28,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Various Python modules for scientific computing.
 
-%description -l pl
-Ró¿ne modu³y Pythona dla obliczeñ naukowych.
+%description -l pl.UTF-8
+RÃ³Å¼ne moduÅ‚y Pythona dla obliczeÅ„ naukowych.
 
 %prep
 %setup -q -n %{mname}-%{version}

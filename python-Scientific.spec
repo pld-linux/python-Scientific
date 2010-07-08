@@ -11,7 +11,7 @@ Summary:	Various Python modules for scientific computing
 Summary(pl.UTF-8):	Różne moduły Pythona dla obliczeń naukowych
 Name:		python-%{pname}
 Version:	2.4.9
-Release:	4
+Release:	5
 Group:		Libraries/Python
 License:	LGPL
 Source0:	http://starship.python.net/~hinsen/ScientificPython/%{mname}-%{version}.tar.gz

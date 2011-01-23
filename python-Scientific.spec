@@ -20,6 +20,7 @@ URL:		http://starship.python.net/crew/hinsen/scientific.html
 BuildRequires:	netcdf-devel
 BuildRequires:	python-Numeric-devel
 BuildRequires:	python-tkinter
+BuildRequires:	rpm-pythonprov
 Requires:	python-Numeric
 Requires:	python-tkinter
 %pyrequires_eq	python-modules

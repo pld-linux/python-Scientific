@@ -38,11 +38,11 @@ Różne moduły Pythona dla obliczeń naukowych.
 %build
 CC="%{__cc}"; export CC
 CFLAGS="%{rpmcflags}"; export CFLAGS
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__python} setup.py install --root=$RPM_BUILD_ROOT --optimize=2
+%py_install
 
 #Removing *.py files
 find $RPM_BUILD_ROOT%{_libdir} -type f -name "*.py"|xargs rm

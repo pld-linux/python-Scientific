@@ -17,6 +17,7 @@ License:	LGPL
 Source0:	http://starship.python.net/~hinsen/ScientificPython/%{mname}-%{version}.tar.gz
 # Source0-md5:	a88602846bdb8a1e2c9f21dc3cf81341
 URL:		http://starship.python.net/crew/hinsen/scientific.html
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	netcdf-devel
 BuildRequires:	python-Numeric-devel
 BuildRequires:	python-tkinter
